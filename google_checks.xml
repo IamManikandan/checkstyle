@@ -15,7 +15,7 @@
 <module name = "Checker">
     <property name="charset" value="UTF-8"/>
 
-    <property name="severity" value="warning"/>
+    <property name="severity" value="error"/>
 
     <property name="fileExtensions" value="java, properties, xml"/>
     <!-- Excludes all 'module-info.java' files              -->
@@ -31,12 +31,12 @@
 
     <module name="LineLength">
         <property name="fileExtensions" value="java"/>
-        <property name="max" value="100"/>
+        <property name="max" value="110"/>
         <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
     </module>
 
     <module name="TreeWalker">
-        <!-- <module name="OuterTypeFilename"/>
+        <module name="OuterTypeFilename"/>
         <module name="IllegalTokenText">
             <property name="tokens" value="STRING_LITERAL, CHAR_LITERAL"/>
             <property name="format"
@@ -104,13 +104,13 @@
             <property name="option" value="EOL"/>
         </module>
         <module name="SeparatorWrap">
-            
+            <!-- ELLIPSIS is EOL until https://github.com/google/styleguide/issues/258 -->
             <property name="id" value="SeparatorWrapEllipsis"/>
             <property name="tokens" value="ELLIPSIS"/>
             <property name="option" value="EOL"/>
         </module>
         <module name="SeparatorWrap">
-           
+            <!-- ARRAY_DECLARATOR is EOL until https://github.com/google/styleguide/issues/259 -->
             <property name="id" value="SeparatorWrapArrayDeclarator"/>
             <property name="tokens" value="ARRAY_DECLARATOR"/>
             <property name="option" value="EOL"/>
@@ -180,11 +180,11 @@
              value="GenericWhitespace ''{0}'' should followed by whitespace."/>
             <message key="ws.notPreceded"
              value="GenericWhitespace ''{0}'' is not preceded with whitespace."/>
-        </module> -->
+        </module>
         <module name="Indentation">
             <property name="basicOffset" value="4"/>
             <property name="braceAdjustment" value="0"/>
-            <property name="caseIndent" value="2"/>
+            <property name="caseIndent" value="4"/>
             <property name="throwsIndent" value="4"/>
             <property name="lineWrappingIndentation" value="4"/>
             <property name="arrayInitIndent" value="2"/>
@@ -192,9 +192,9 @@
         <!-- <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
             <property name="allowedAbbreviationLength" value="1"/>
-        </module>
+        </module> -->
         <module name="OverloadMethodsDeclarationOrder"/>
-        <module name="VariableDeclarationUsageDistance"/>
+        <!-- <module name="VariableDeclarationUsageDistance"/> -->
         <module name="CustomImportOrder">
             <property name="sortImportsInGroupAlphabetically" value="true"/>
             <property name="separateLineBetweenGroups" value="true"/>
@@ -260,6 +260,6 @@
         <module name="EmptyCatchBlock">
             <property name="exceptionVariableName" value="expected"/>
         </module>
-        <module name="CommentsIndentation"/> -->
+        <module name="CommentsIndentation"/>
     </module>
 </module>
